@@ -1,0 +1,82 @@
+body {
+  background-color: #f8f9fa;
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #343a40;
+}
+
+#searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+#searchForm input[type="text"] {
+  width: 300px;
+}
+
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(210px, 1fr)
+  ); /* increased from 160px */
+  gap: 24px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+  .anime-grid {
+    grid-template-columns: repeat(5, 1fr); /* max 5 columns */
+  }
+}
+
+.content-card {
+  width: 210px; /* 30% bigger than 160px */
+  height: 340px; /* increased from 260px */
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+}
+
+.content-card img {
+  width: 100%;
+  height: 260px; /* increased from 200px */
+  object-fit: cover;
+}
+
+.anime-title {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  height: 80px; /* increased to fit larger font */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+}
